@@ -1,0 +1,379 @@
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu {
+        display: none; 
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar ul li {
+        margin: 5px;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+
+
+.hamburger {
+    display: none; 
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* ===== Responsive Code Ends Here ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* ======== NavBar ======== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #032030;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo-green {
+    color: #45dfb1;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.menu li a:hover {
+    color: #45dfb1;
+    cursor: pointer;
+}
+
+/* ======== DROPDOWN ======== */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #032030;
+    min-width: 150px;
+    top: 40px;
+    left: 0;
+    list-style: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content li:hover {
+    cursor: pointer;
+}
+
+.dropdown-content li a {
+    padding: 10px;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-content li a:hover {
+    color: #45dfb1;
+    cursor: pointer;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* ======= Dropdown For Mobile Device ===== */
+
+/* ======== Side Bar ======== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 200px;
+    height: 100vh;
+    background: #021820;
+    padding: 20px;
+    color: white;
+    padding-top: 50px;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #45dfb1;
+}
+
+/* ======== The Main Content ======== */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 16%;
+    padding: 20px;
+}
+
+.analiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.analiz-child {
+    flex: 1 1 calc(50% - 20px);
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.analiz-child:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 8px 0;
+    }
+    .menu li {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+    .menu .dripdown {
+        width: 100%;
+        order: 1;
+    }
+
+    .analiz-container {
+        flex-direction: column;
+    }
+    .analiz-child {
+        flex: 1 1 100%; 
+    }
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .menu a:nth-child(2),
+    .menu a:nth-child(3),
+    .menu a:nth-child(4) {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .content {
+        flex-grow: 1;
+        padding: 30px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .main-content {
+        margin-top: 42%;
+        margin-left: 10%;
+    }
+    .dropdown-content {
+        margin-top: 28%;
+        margin-left: 35%;
+    }
+}
+
+/* ======== The Footer Starts Here =======*/
+.footer {
+    background: #032030;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 70px;
+    max-width: 1200px;
+    margin-bottom: 0 auto;
+    padding-left: 100px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: #45dfb1;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #45dfb1;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #45dfb1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+/* ========== Responsive Footer ========== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
