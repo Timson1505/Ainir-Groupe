@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to left, #E0C4FD, #8FC6FD);
+}
+
+
+.container {
+    height: 300px;
+    width: 270px;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-top: 80px;
+    margin-left: 30em;
+    padding-top: 60px;
+    padding-left: 60px;
+    font: italic small-caps bold, serif;
+}
+
+.reg {
+    margin-bottom: 30px;
+    margin-top: -30px;
+    text-decoration-line: overline;
+    text-decoration-color: goldenrod;
+    
+}
+
+.name {
+    height: 25px;
+    width: 170px;
+    border: 0.5px solid black; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.last-name {
+    height: 25px;
+    width: 170px;
+    border: 0.5px solid black; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+    accent-color: deeppink;
+}
+
+.email {
+    height: 25px;
+    width: 170px;
+    border: 0.5px solid black; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+    accent-color: deeppink;
+}
+
+.robot {
+    border: 0.5px solid black;
+    accent-color: goldenrod;
+}
+
+.submit {
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 18px;
+}
+
+.f {
+    margin-left: 33rem;
+    text-decoration: overline;
+    text-decoration-color: goldenrod;
+}
+
+.facebook {
+    color: #0f75cf;
+    margin-left: 3rem;
+}
+
+.instagram {
+    color: #b9387a;
+    margin-left: 10px;
+}
+
+.linked-in {
+    margin-left: 10px;
+    color: #0f75cf;
+}
+
+.twitter {
+    margin-left: 10px;
+    color: #0f75cf;
+    
+}
+
+a:hover {
+    border-top: 1px solid black;
+}
+
