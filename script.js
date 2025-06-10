@@ -1,30 +1,44 @@
-const phrases = ["teacher", "programmer"];
-    let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+function sendToWhatsApp() {
+  const name = document.getElementById('clientName').value;
+  const phone = document.getElementById('clientPhone').value;
+  const service = document.getElementById('serviceType').value;
+  const date = document.getElementById('appointmentDate').value;
+  const time = document.getElementById('appointmentTime').value;
+  const message = document.getElementById('clientMessage').value;
 
-    function type() {
-      const text = phrases[index];
-      const element = document.getElementsByClassName('typing')[0]; // Select the first element
+  // Валидация
+  if (!name || !phone || !service || !date || !time) {
+    alert('Пожалуйста, заполните все обязательные поля');
+    return;
+  }
 
-      if (isDeleting) {
-        element.innerHTML = text.substring(0, charIndex - 1);
-      } else {
-        element.innerHTML = text.substring(0, charIndex + 1);
-      }
+  if (!/^\+?\d{10,15}$/.test(phone)) {
+    alert('Пожалуйста, введите корректный номер телефона');
+    return;
+  }
 
-      charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+  const formattedDate = new Date(date).toLocaleDateString('ru-RU');
+  const whatsappNumber = '996509601501'; // Ваш номер без +
+  
+  const text = `Новая запись в салон:
+Имя: ${name}
+Телефон: ${phone}
+Услуга: ${service}
+Дата: ${formattedDate}
+Время: ${time}
+Сообщение: ${message || 'нет'}`;
 
-      if (!isDeleting && charIndex === text.length + 1) {
-        isDeleting = true;
-      }
+  const encodedText = encodeURIComponent(text);
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+  
+  // Открываем WhatsApp
+  console.log(whatsappUrl);
 
-      if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        index = (index + 1) % phrases.length;
-      }
-
-      setTimeout(type, isDeleting ? 100 : 200);
-    }
-
-    document.addEventListener('DOMContentLoaded', type);
+  window.open(whatsappUrl, '_blank');
+  
+  // Показываем уведомление
+  alert('Сейчас откроется WhatsApp для подтверждения записи. Пожалуйста, отправьте сообщение!');
+  
+  // Сбрасываем форму только после подтверждения
+  document.getElementById('appointmentForm').reset();
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Салон Красоты - BeautyStyle</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo"><span class="pink">Be </span><span class="black">beauty</span></div>
+      <div class="menu-toggle" onclick="toggleNav"></div>
+      <nav id="navbar">
+        <a href="#service">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#contact">Контакты</a>
+        <a href="https://wa.me/996709070808" target="_blank">+996 709 07 08 08</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-slider">
+      <div class="slide active" style="background-image: url('salon1.jpg')"></div>
+      <div class="slide" style="background-image: url('salon2.jpg')"></div>
+      <div class="slide" style="background-image: url('salon3.jpg')"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Красота начинается здесь!</h1>
+      <p>Профессиональный уход в атмосфере роскоши</p>
+      <a href="#contact" class="btn">Записаться онлайн</a>
+    </div>
+  </section>
+
+  <section id="service">
+    <h2>Наши услуги</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Парихмахерские услуни</h3>
+        <ul>
+          <li>Женская стрижка</li>
+          <li>Мужская стрижка</li>
+          <li>Детская стрижка</li>
+          <li>Окаршивание в тон</li>
+          <li>Укладка</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>Ногтевой сервис</h3>
+        <ul>
+          <li>Классический маникюр</li>
+          <li>Маникюр с покрытием лака</li>
+          <li>Маникюр с твердым укреплением</li>
+          <li>Наращивание ногтей</li>
+          <li>Коррекция нарощенных ногтей</li>
+          <li>Классический педикюр</li>
+          <li>Медицинский педикюр</li>
+        </ul>
+      </div>
+  
+      <div class="service-card">
+        <h3>Визаж</h3>
+        <ul>
+          <li>Визаж</li>
+          <li>Ламинирование бровей</li>
+          <li>Ламинирование ресниц</li>
+          <li>Коррекция бровей</li>
+          <li>Отращивание бровей</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+  <div class="calendar-wrapper">
+    <iframe src="https://calendar.google.com/calendar/embed?src=family16076568732423608163%40group.calendar.google.com&ctz=Europe%2FBudapest" 
+        style="border: 0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+  </div>
+  
+
+  <section id="gallery">
+    <h2>Галерея работ</h2>
+    <div class="gallery-grid">
+      <img src="photo 1.jpg" alt="фото">
+      <img src="photo 2.jpg" alt="фото">
+      <img src="photo 3.jpg" alt="фото">
+      <img src="photo 4.jpg" alt="фото">
+      <img src="photo 5.jpg" alt="фото">
+      <img src="салон красоты.jpg" alt="фото">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Контакты и запись</h2>
+    <div class="contact-grid">
+      <!-- Первый столбик: контакты -->
+      <div class="contact-info">
+        <p><strong>Телефон:</strong> +996 709 07 08 08</p>
+        <p><strong>Адрес:</strong> Бишкек, ул. Исанова 102</p>
+        <p><strong>Время работы:</strong><br> Пн–Сб: 9:00–19:00</p>
+        <p><strong>Instagram:</strong><br><a href="https://instagram.com/your_instagram" target="_blank">@be_beauty_bar</a></p>
+      </div>
+  
+      <!-- Второй столбик: форма записи -->
+      <div class="contact-form">
+        <form id="appointmentForm">
+          <input type="text" id="clientName" placeholder="Ваше имя" required>
+          <input type="tel" id="clientPhone" placeholder="Телефон" required>
+          
+          <select id="serviceType" required>
+            <option value="" disabled selected>Выберите услугу</option>
+            <option value="Женская стрижка">Женская стрижка</option>
+            <option value="Мужская стрижка">Мужская стрижка</option>
+            <option value="Маникюр">Маникюр</option>
+            <option value="Визаж">Визаж</option>
+          </select>
+          
+          <div class="datetime-picker">
+            <input type="date" id="appointmentDate" required>
+            <input type="time" id="appointmentTime" required>
+          </div>
+          
+          <textarea id="clientMessage" placeholder="Коментарий..." rows="4"></textarea>
+          
+          <button type="button" onclick="sendToWhatsApp()">Отправить</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Карта снизу -->
+    <div class="map-container">
+      <iframe
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.750820197532!2d74.58905947631906!3d42.87810327114962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec81f8d188765%3A0x229144d64ae38352!2s102%20Isanov%20St%2C%20Bishkek!5e0!3m2!1sen!2skg!4v1749534771332!5m2!1sen!2skg" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       
+    </div>
+  </section>
+  
+
+  <div class="social-float">
+    <a href="https://wa.me/996709070808" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/be_beauty_bar_" target="_blank" class="social-icon instagram" title="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+  
+
+  <footer>
+    <p>&copy; 2025 Beautiy Saloon. Все права защищены.</p>
+  </footer>
+</body>
+</html>
